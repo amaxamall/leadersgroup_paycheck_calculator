@@ -1,0 +1,133 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 750px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #555;
+}
+
+form input, form select, button {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+button {
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#personalResult:empty, #teamResults:empty {
+    display: none;
+    padding: 0;
+    border: none;
+    background: transparent;
+    min-height: 0;
+    margin-bottom: 0;
+}
+
+#personalResult:not(:empty), #teamResults:not(:empty) {
+    display: block;
+    padding: 20px;
+    border-left: 5px solid #007bff;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#exportCSV {
+    margin: 0 auto 30px auto;
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #28a745;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: block;
+    width: fit-content;
+}
+
+#exportCSV:hover {
+    background-color: #218838;
+}
+
+.drop-zone {
+    border: 2px dashed #007bff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    color: #555;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.drop-zone.dragover {
+    background-color: #e6f0ff;
+    border-color: #0056b3;
+}
+
+#uploadedFiles {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+#uploadedFiles li {
+    padding: 6px 10px;
+    background: #f1f1f1;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.removeFile {
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+@media(max-width: 750px){
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+}
