@@ -2,71 +2,69 @@
 <html lang="bg">
 <head>
     <meta charset="UTF-8">
-    <title>Leaders Group Calculator</title>
+    <title>Leaders Group - Калкулатор за възнаграждения</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Leaders Group Calculator</h1>
+<div class="container">
+    <h1>Leaders Group - Калкулатор за възнаграждения</h1>
 
-        <!-- Personal data -->
-        <form id="personalForm">
-            <label for="name">Име на търговец:</label>
-            <input type="text" id="name" required>
+    <form id="personalForm">
+        <label>Име на търговец:</label>
+        <input type="text" required pattern="[A-Za-zА-Яа-я\s\-]+" id="name" required>
 
-            <label for="rank">Ранг:</label>
-            <select id="rank" required>
-                <option value="">Изберете...</option>
-                <option value="MTP">МТП</option>
-                <option value="STP">СТП</option>
-                <option value="RaM">РаМ</option>
-                <option value="ReM">РеМ</option>
-            </select>
+        <label>Ранг:</label>
+        <select id="rank" required>
+            <option value="">Изберете...</option>
+            <option value="МТП">МТП</option>
+            <option value="СТП">СТП</option>
+            <option value="РаМ">РаМ</option>
+            <option value="РеМ">РеМ</option>
+        </select>
 
-            <label for="month">Месец (1-12):</label>
-            <input type="number" id="month" min="1" max="12" required>
+        <label>Месец:</label>
+        <input type="number" id="month" min="1" max="12" required>
 
-            <label for="year">Година:</label>
-            <input type="number" id="year" min="2000" max="2100" required>
+        <label>Година:</label>
+        <input type="number" id="year" min="2020" max="2100" required>
 
-            <label for="oz">ОЗ (€):</label>
-            <input type="number" id="oz" min="0" required>
+        <label>ОЗ (€):</label>
+        <input type="text" id="oz" inputmode="numeric" required>
 
-            <label for="zh">ЖЗ (€):</label>
-            <input type="number" id="zh" min="0" required>
+        <label>ЖЗ (€):</label>
+        <input type="text" id="zh" inputmode="numeric" required>
 
-            <label for="pension">Пенсионно (бр. полици):</label>
-            <input type="number" id="pension" min="0" required>
+        <label>Пенсионно (бр. полици):</label>
+        <input type="number" id="pension" min="0" required>
 
-            <label for="loan">Кредитиране (€):</label>
-            <input type="number" id="loan" min="0" required>
+        <label>Кредитиране (€):</label>
+        <input type="text" id="loan" inputmode="numeric" required>
 
-            <label for="ef">ЕФ (€):</label>
-            <input type="number" id="ef" min="0" required>
+        <label>ЕФ (€):</label>
+        <input type="text" id="ef" inputmode="numeric" required>
 
-            <button type="submit">Изчисли лично възнаграждение</button>
-        </form>
+        <button type="submit">Изчисли лично възнаграждение</button>
+    </form>
 
-        <!-- Personal results -->
-        <div id="personalResult"></div>
-        <button type="button" id="exportCSV" style="display:none;">Експортирай CSV</button>
+    <div id="personalResult"></div>
+    <button id="exportCSV" style="display:none;">Експортирай CSV</button>
 
-        <!-- Team section (RaM/ReM) -->
-        <div id="teamSection" style="display:none;">
-            <h2>Вижте бонусите от Вашия екип</h2>
+    <div id="teamSection" style="display:none;">
+        <h2>Бонуси от екипа</h2>
 
-            <!-- Drag & drop -->
-            <div id="dropZone" class="drop-zone">
-                Плъзнете файлове тук или кликнете, за да изберете
-                <input type="file" id="teamFile" accept=".csv" multiple hidden>
-            </div>
-
-            <ul id="uploadedFiles"></ul>
-            <button type="button" id="calcTeam">Изчисли бонус</button>
-            <div id="teamResults"></div>
+        <div id="dropZone" class="drop-zone">
+            Плъзнете CSV файлове тук
+            <input type="file" id="teamFile" multiple hidden>
         </div>
+
+        <ul id="uploadedFiles"></ul>
+        <button id="calcTeam">Изчисли бонус</button>
+        <div id="teamResults"></div>
     </div>
 
-    <script src="script.js"></script>
+    <button type="button" id="resetCalc">Ново изчисление</button>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
